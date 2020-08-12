@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+    </head>
+
+    <body>
+        <script>
+            function getRandomInt(max){
+                return Math.floor(Math.random() * Math.floor(max));
+            }
+            function computerPlay(){
+                let choiceInt = getRandomInt(3);
+                switch(choiceInt){
+                    case 0: 
+                        return "Rock";
+                        break;
+                    case 1: 
+                        return "Paper";
+                        break;
+                    case 2:
+                        return "Scissors";
+                        break;
+                    default: console.log("Error");
+                    break;
+                }
+                
+            }
+            function playerPlay(choice){
+                switch(choice){
+                    case 0:
+                        return "Rock";
+                        break;
+                    case 1: 
+                        return "Paper";
+                        break;
+                    case 2: 
+                        return "Scissors";
+                        break;
+                    default: console.log("Error");
+                    break;
+                }
+            }
+            function playGame(){
+                let computerChoice = computerPlay();
+                const playerSelect = Number(prompt("Type '1' for Rock, '2' for Paper, and '3' for Scissors."));
+                let playerChoice = playerPlay(playerSelect);
+                console.log("Player: " + playerChoice);
+                console.log("Compter: " + computerChoice);
+                if((playerChoice == "Rock" && computerChoice == "Scissors") || (playerChoice == "Scissors" && computerChoice == "Paper") || (playerChoice == "Paper" && computerChoice == "Rock")){
+                    alert("Player Wins!");
+                }
+                else{
+                    if(playerChoice == computerChoice){
+                        alert("Tie Game");
+                    }
+                    else{
+                        alert("Computer Wins!");
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
