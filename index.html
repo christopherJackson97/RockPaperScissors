@@ -1,64 +1,69 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Rock Paper Scissors</title>
-    </head>
 
-    <body>
-        <script>
-            function getRandomInt(max){
-                return Math.floor(Math.random() * Math.floor(max));
-            }
-            function computerPlay(){
-                let choiceInt = getRandomInt(3);
-                switch(choiceInt){
-                    case 0: 
-                        return "Rock";
-                        break;
-                    case 1: 
-                        return "Paper";
-                        break;
-                    case 2:
-                        return "Scissors";
-                        break;
-                    default: console.log("Error");
-                    break;
-                }
-                
-            }
-            function playerPlay(choice){
-                switch(choice){
-                    case 0:
-                        return "Rock";
-                        break;
-                    case 1: 
-                        return "Paper";
-                        break;
-                    case 2: 
-                        return "Scissors";
-                        break;
-                    default: console.log("Error");
-                    break;
-                }
-            }
-            function playGame(){
-                let computerChoice = computerPlay();
-                const playerSelect = Number(prompt("Type '1' for Rock, '2' for Paper, and '3' for Scissors."));
-                let playerChoice = playerPlay(playerSelect);
-                console.log("Player: " + playerChoice);
-                console.log("Compter: " + computerChoice);
-                if((playerChoice == "Rock" && computerChoice == "Scissors") || (playerChoice == "Scissors" && computerChoice == "Paper") || (playerChoice == "Paper" && computerChoice == "Rock")){
-                    alert("Player Wins!");
-                }
-                else{
-                    if(playerChoice == computerChoice){
-                        alert("Tie Game");
-                    }
-                    else{
-                        alert("Computer Wins!");
-                    }
-                }
-            }
-        </script>
-    </body>
+<head>
+  <title>Rock Paper Scissors</title>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <p>Made By Christopher Jackson</p>
+      </div>
+      <div class="col-sm-8">
+        <h1>Rock Paper Scissors</h1>
+      </div>
+    </div>
+        <div class="container">
+            <div class="row pt-5 align-center">
+                <div class="card col-sm" style="width: 18rem;">
+                    <button onclick="rock()" class="card-body btn btn-dark btn-block rounded-pill">Rock</button>
+                </div>
+            </div>
+        </div>
+        <div class="container pt-5">
+            <div class="row">
+                <div class="card col-sm" style="width: 18rem;">
+                    <button onclick="paper()" class="card-body btn btn-primary btn-block rounded-pill">Paper</button>
+                </div>
+            </div>
+        </div>
+    
+        <div class="container pt-5">
+        <div class="row">
+                <div class="card col-sm" style="width: 18rem;">
+                    <button onclick="scissors()" class="card-body btn btn-warning btn-block rounded-pill">Scissors</button>
+                </div>
+            </div>
+        </div>
+        <div class = "container pt-5">
+            <div class="row">
+                <div class="card col-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Choices</h5>
+                        <p class="card-text">Player: </p>
+                        <p id = "playerChoice" class = "card-text"></p>
+                        <p class="card-text">Computer:</p>
+                        <p id="compChoice" class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="row fixed-bottom">
+      <div class="col">
+        <p>Player: <p id="playerScore">0</p> </p>
+      </div>
+      <div class="col">
+        <p>Computer: <p id="compScore">0</p> </p>
+      </div>
+    </div>
+  </div>
+ 
+</body>
+
 </html>
