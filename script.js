@@ -47,17 +47,19 @@ function play(pChoice){
 
     const pScore = document.querySelector("#playerScore");
     const cScore = document.querySelector("#compScore");
-
+    const result = document.querySelector("#result");
 
     if((pChoice == "Rock" && cChoice == "Scissors") || (pChoice == "Scissors" && cChoice == "Paper") || (pChoice == "Paper" && cChoice == "Rock")){
         pScore.textContent = Number(pScore.textContent) + 1;
+        result.textContent = "Player Wins!";
     }
     else{
         if(pChoice == cChoice){
-            alert("Tie Game");
+            result.textContent = "Tie Game";
         }
         else{
             cScore.textContent = Number(cScore.textContent) + 1;
+            result.textContent = "Computer Wins!";
         }
     }
 }
